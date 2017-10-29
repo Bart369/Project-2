@@ -1,17 +1,17 @@
 let body = document.querySelector('body');
-let showsContainer = document.createElement('div');
+showsContainer = document.createElement('div');
 showsContainer.setAttribute('id', 'showsContainer');
 body.append(showsContainer);
 
+
 function onSuccess(responseData){
   console.log(responseData)
-  for (let i = 0; i < responseData.results.length; i++){
-
-    let name = responseData.results[i].name;
-    let poster = responseData.results[i].poster_path;
-    let date = responseData.results[i].first_air_date;
-    let description = responseData.results[i].overview;
-    let showID = responseData.results[i].id;
+  response.results.forEach(e => {
+    let name = e.name;
+    let poster = e.poster_path;
+    let date = e.date;
+    let description = e.overview;
+    let showID = e.id;
 
     let showListing = document.createElement('div');
     showListing.setAttribute('class', 'showListing');
@@ -34,13 +34,22 @@ function onSuccess(responseData){
     let descriptionDiv = document.createElement('div');
     showListing.append(descriptionDiv)
     descriptionDiv.innerHTML += `${description}`;
-  }
+  })
 };
 
+let removeItems = false;
 
 document.querySelector('button').addEventListener('click', () =>{
   let search = document.querySelector('.search').value;
-  url = `https://api.themoviedb.org/3/search/tv?api_key=93b40ad27ade3177e800e02bd34024d6&language=en-US&query=${search}&page=1`;
+  let url = `https://api.themoviedb.org/3/search/tv?api_key=93b40ad27ade3177e800e02bd34024d6&language=en-US&query=${search}&page=1`;
+
+if (removeItems){
+  document.querySelectorAll(".showListing").forEach(e => e.parentNode.removeChild(e));
+}
+
+
+
+removeItems = true;
 
   fetch(url)
     .then(response => {
