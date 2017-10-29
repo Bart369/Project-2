@@ -7,4 +7,11 @@
 
 .showListing{
   border: solid;
+  width: 600px;
+}
+
+.showsContainer{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: wrap;
 }

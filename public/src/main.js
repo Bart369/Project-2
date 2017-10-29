@@ -6,7 +6,7 @@ body.append(showsContainer);
 
 function onSuccess(responseData){
   console.log(responseData)
-  response.results.forEach(e => {
+  responseData.results.forEach(e => {
     let name = e.name;
     let poster = e.poster_path;
     let date = e.date;
@@ -44,6 +44,7 @@ document.querySelector('button').addEventListener('click', () =>{
   let url = `https://api.themoviedb.org/3/search/tv?api_key=93b40ad27ade3177e800e02bd34024d6&language=en-US&query=${search}&page=1`;
 
 if (removeItems){
+  //we are getting a nodelist here
   document.querySelectorAll(".showListing").forEach(e => e.parentNode.removeChild(e));
 }
 
@@ -53,7 +54,7 @@ removeItems = true;
 
   fetch(url)
     .then(response => {
-      console.log('http response'. response);
+      console.log('http response' ,response);
       return response.json();
     })
     .then(jsonData =>{
