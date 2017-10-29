@@ -1,8 +1,7 @@
-// require('isomorphic-fetch');
+<% include ./partials/boilerplate.ejs %>
 
-// function showFightClub(req,res,next) {
-//   fetch('https://api.themoviedb.org/3/movie/550', {
 
-//   })
 
-// }
+
+
+<% include ./partials/end.ejs %>

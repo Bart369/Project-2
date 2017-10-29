@@ -1,4 +1,10 @@
 .poster {
   height: 300px;
   width: 300px;
+  background-size: cover;
+}
+
+
+.showListing{
+  border: solid;
 }
