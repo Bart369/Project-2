@@ -19,6 +19,20 @@ const showsController = {};
 //   })
 // }
 
+showsController.findById = (req,res) => {
+    fetch(`https://api.themoviedb.org/3/tv/${req.params.code}?api_key=93b40ad27ade3177e800e02bd34024d6&language=en-US`)
+    .then(response => {
+      console.log('http response', response);
+      return response.json();
+    })
+    .then(jsonData =>{
+      res.render('showsViews/show-single.ejs', {jsonData})
+    })
+    .catch(err => {
+      console.log(err);
+    })
+}
+
 showsController.fetch = (req,res) => {
     fetch(`https://api.themoviedb.org/3/search/tv?api_key=93b40ad27ade3177e800e02bd34024d6&language=en-US&query=${req.params.search}&page=1`)
     .then(response => {

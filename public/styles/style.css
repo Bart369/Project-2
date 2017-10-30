@@ -5,13 +5,36 @@
 }
 
 
-.showListing{
+.showContainer{
   border: solid;
-  width: 600px;
+  display: flex;
 }
 
-.showsContainer{
+.showsListing{
   display: flex;
   justify-content: space-around;
   flex-direction: wrap;
+}
+
+.showInfo{
+  max-width: 400px;
+
+}
+.showPicture{
+
+}
+
+.seasons{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+button{
+  color: yellow;
+  background: blue;
+}
+
+button:hover{
+  background: yellow;
+  color: blue;
 }

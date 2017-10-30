@@ -1,0 +1,43 @@
+<% include ../partials/boilerplate.ejs %>
+
+<div class = 'showContainer'>
+  <% if (jsonData.poster_path != null) { %>
+  <div class = 'showPicture'>
+    <img src = 'https://image.tmdb.org/t/p/w300<%= jsonData.poster_path %>'>
+  </div>
+  <% } %>
+  <div class = 'showInfo'>
+    <h1><%= jsonData.name %></h1>
+    <p>First Air Date: <%= jsonData.first_air_date %> </p>
+    <p>Networks: <% jsonData.networks.forEach(e => { %> <%=e.name %> <% }) %></p>
+    <p>Status: <%= jsonData.status %></p>
+    <p>Number of episodes: <%= jsonData.number_of_episodes %></p>
+    <p>Number of seasons: <%= jsonData.number_of_seasons %></p>
+    <p>Genres: <% jsonData.genres.forEach(e => { %> <%= e.name %> <% }) %></p>
+    <p><%= jsonData.overview %></p>
+  </div>
+</div>
+<h1>Seasons</h1>
+<div class = 'seasons'>
+  <% jsonData.seasons.forEach(e =>{ %>
+  <div class = 'showContainer'>
+    <div class = 'showPicture'>
+      <img src = 'https://image.tmdb.org/t/p/w300<%= e.poster_path %>'>
+    </div>
+    <div class = 'showInfo'>
+      <h1>Season: <%= e.season_number %></h1>
+      <p>Episode Count: <%= e.episode_count %></p>
+      <p>Air Date: <%= e.air_date %> </p>
+    </div>
+  </div>
+<% }) %>
+</div>
+
+
+
+
+
+
+
+
+<% include ../partials/end.ejs %>

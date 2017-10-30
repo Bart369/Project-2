@@ -11,5 +11,6 @@ const showsController = require('../controllers/shows-controller.js');
 //   res.render('showsViews/shows-search.ejs')
 // })
 showsRoutes.get(`/:search`, showsController.fetch);
+showsRoutes.get('/search/:code', showsController.findById);
 
 module.exports = showsRoutes;
