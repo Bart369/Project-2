@@ -1,8 +1,7 @@
 let body = document.querySelector('body');
-showsContainer = document.createElement('div');
+showsContainer = document.createElement('div'); //Container the shows
 showsContainer.setAttribute('id', 'showsContainer');
 body.append(showsContainer);
-
 
 function onSuccess(responseData){
   console.log(responseData)
@@ -14,6 +13,7 @@ function onSuccess(responseData){
       let description = e.overview;
       let showID = e.id;
 
+      ///////////////////////////////////Container for EACH show
       let showListing = document.createElement('div');
       showListing.setAttribute('class', 'showListing');
       showsContainer.append(showListing);
@@ -49,18 +49,51 @@ function onSuccess(responseData){
       let showIDDiv = document.createElement('div');
       showIDDiv.setAttribute('name', 'showID');
       form.append(showIDDiv)
-      showIDDiv.innerHTML += `Show description: ${showID}`;
-
-
+      showIDDiv.innerHTML += `Code: ${showID}`;
 
       let submit = document.createElement("input"); //input element, Submit button
       submit.setAttribute('type',"submit");
       submit.setAttribute('value',"Submit");
       form.append(submit)
 
-
+      ///////////////////////////////////////// FORM
+      // let form = document.createElement("form");
+      // form.setAttribute('method',"post");
+      // form.setAttribute('action',"/shows");
+      // showListing.append(form)
+      // let nameInput = document.createElement('input')
+      // nameInput.setAttribute('type', 'hidden')
+      // nameInput.setAttribute('name', 'name')
+      // nameInput.setattribute('value', `${name}`);
+      // form.append(nameInput)
+      // let posterInput = document.createElement('input')
+      // posterInput.setAttribute('type', 'hidden')
+      // posterInput.setAttribute('name', 'poster')
+      // posterInput.setattribute('value', `${poster}`);
+      // form.append(posterInput)
+      // let dateInput = document.createElement('input')
+      // dateInput.setAttribute('type', 'hidden')
+      // dateInput.setAttribute('name', 'date')
+      // dateInput.setattribute('value', `${date}`);
+      // form.append(dateInput)
+      // let descriptionInput = document.createElement('input')
+      // descriptionInput.setAttribute('type', 'hidden')
+      // descriptionInput.setAttribute('name', 'description')
+      // descriptionInput.setattribute('value', `${description}`);
+      // form.append(descriptionInput)
+      // let IDInput = document.createElement('input')
+      // IDInput.setAttribute('type', 'hidden')
+      // IDInput.setAttribute('name', 'showcodeid')
+      // IDInput.setattribute('value', `${showID}`);
+      // form.append(IDInput)
+      // //submit button
+      // let submit = document.createElement("input");
+      // submit.setAttribute('type',"submit");
+      // submit.setAttribute('value',"Submit");
+      // form.append(submit)
     })
   } else {
+    //NO RESULTS FOUNDS
     let noResults = document.createElement('div');
     noResults.setAttribute('class', 'showListing nothing');
     showsContainer.append(noResults);
