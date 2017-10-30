@@ -13,7 +13,7 @@ function onSuccess(responseData){
       let description = e.overview;
       let showID = e.id;
 
-      ///////////////////////////////////Container for EACH show
+
       let showListing = document.createElement('div');
       showListing.setAttribute('class', 'showListing');
       showsContainer.append(showListing);
@@ -93,38 +93,23 @@ function onSuccess(responseData){
       // form.append(submit)
     })
   } else {
-    //NO RESULTS FOUNDS
-    let noResults = document.createElement('div');
-    noResults.setAttribute('class', 'showListing nothing');
-    showsContainer.append(noResults);
-    noResults.innerHTML += 'No matches found.'
-  }
+      //NO RESULTS FOUNDS
+      let noResults = document.createElement('div');
+      noResults.setAttribute('class', 'showListing nothing');
+      showsContainer.append(noResults);
+      noResults.innerHTML += 'No matches found.'
+    }
 }
 
-let removeItems = false;
 
-document.querySelector('.finder').addEventListener('click', () =>{
-  let search = document.querySelector('.search').value;
-  let url = `https://api.themoviedb.org/3/search/tv?api_key=93b40ad27ade3177e800e02bd34024d6&language=en-US&query=${search}&page=1`;
 
-if (removeItems){
-  //we are getting a nodelist here
-  document.querySelectorAll(".showListing").forEach(e => e.parentNode.removeChild(e));
-}
+document.querySelector('button').addEventListener('click', () =>{
+   search = document.querySelector('.search').value;
+   let url = `/shows/${search}`;
 
-removeItems = true;
 
-  fetch(url)
-    .then(response => {
-      console.log('http response', response);
-      return response.json();
-    })
-    .then(jsonData =>{
-      onSuccess(jsonData);
-    })
-    .catch(err => {
-      console.log(err);
-    })
+  window.location = url;
+
 })
 
 
