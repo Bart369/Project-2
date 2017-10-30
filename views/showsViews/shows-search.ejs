@@ -1,7 +1,26 @@
 <% include ../partials/boilerplate.ejs %>
 
-Hello from search;
-<%= data.results[0].name %>
+<input type ='text' class = 'search' placeholder = 'Pick a Show!'>
+<button type ='submit'>Search!</button>
 
+<div id = 'showContainer'>
+  <% if (data.results.length > 0){ %>
+    <% data.results.forEach(e => { %>
+      <div class = 'showListing'>
+        <!-- let showID = e.id;  -->
+        <h1><%= e.name %></h1>
+        <% if (e.poster_path != null){ %>
+          <img src ='https://image.tmdb.org/t/p/w300<%= e.poster_path%>'>
+        <% } %>
+        <h2>First Air Date: <%= e.first_air_date %></h2>
+        <p><b>Description:</b> <%= e.overview %></p>
+      </div>
+    <% }) %>
 
+  <% } else {%>
+    <h1>No matches found</h1>
+    <% } %>
+</div>
+
+<script src='/src/main.js'></script>
 <% include ../partials/end.ejs %>
