@@ -2,11 +2,12 @@ const express = require('express');
 const showsRoutes = express.Router();
 
 const showsController = require('../controllers/shows-controller.js');
-// const showsSearcher = require('../services/shows/shows-searcher.js');
+
+showsRoutes.post('/', showsController.create);
 
 
-// showsRoutes.get('/', showsController.index);
-showsRoutes.get('/search', (req,res) => {
+// showsRoutes.get('/', showsController.index); THIS WILL LEAD TO FAVORITES maybe
+showsRoutes.get('/', (req,res) => {
   res.render('showsViews/shows-search.ejs')
 });
 
