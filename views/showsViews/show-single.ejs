@@ -8,16 +8,16 @@
   <% } %>
   <div class = 'showInfo'>
     <h1><%= jsonData.name %></h1>
-    <p>First Air Date: <%= jsonData.first_air_date %> </p>
-    <p>Networks: <% jsonData.networks.forEach(e => { %> <%=e.name %> <% }) %></p>
-    <p>Status: <%= jsonData.status %></p>
-    <p>Number of episodes: <%= jsonData.number_of_episodes %></p>
-    <p>Number of seasons: <%= jsonData.number_of_seasons %></p>
-    <p>Genres: <% jsonData.genres.forEach(e => { %> <%= e.name %> <% }) %></p>
+    <p><b>First Air Date:</b> <%= jsonData.first_air_date %> </p>
+    <p><b>Networks:</b> <% jsonData.networks.forEach(e => { %> <%=e.name %> <% }) %></p>
+    <p><b>Status:</b> <%= jsonData.status %></p>
+    <p><b>Number of episodes:</b> <%= jsonData.number_of_episodes %></p>
+    <p><b>Number of seasons:</b> <%= jsonData.number_of_seasons %></p>
+    <p><b>Genres:</b> <% jsonData.genres.forEach(e => { %> <%= e.name %> <% }) %></p>
     <p><%= jsonData.overview %></p>
   </div>
 </div>
-<h1>Seasons</h1>
+<h1 class = 'seasonHeader'>Seasons</h1>
 <div class = 'seasons'>
   <% jsonData.seasons.forEach(e =>{ %>
   <div class = 'showContainer'>
@@ -27,9 +27,9 @@
       </div>
     <% } %>
     <div class = 'showInfo'>
-      <h1>Season: <%= e.season_number %></h1>
-      <p>Episode Count: <%= e.episode_count %></p>
-      <p>Air Date: <%= e.air_date %> </p>
+      <h2>Season: <%= e.season_number %></h2>
+      <p><b>Episode Count:</b> <%= e.episode_count %></p>
+      <p><b>Air Date:</b> <%= e.air_date %> </p>
     </div>
   </div>
 <% }) %>

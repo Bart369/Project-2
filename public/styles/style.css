@@ -10,17 +10,20 @@
   background-size: cover;
 }
 
+
+
 .largeContainer{
-  border: solid;
   display: flex;
-  max-width: 650px;
+  max-width: 750px;
   max-height: 500px;
   overflow: scroll;
+  margin-top: 15px;
+  margin-left: 15%;
+  /*line-height: 115%;*/
 
 }
 
 .showContainer{
-  border: solid;
   display: flex;
   margin-bottom: 10px;
   max-width: 500px;
@@ -31,7 +34,7 @@
 #showsListing{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-around
 }
 
 .showInfo{
@@ -50,6 +53,23 @@
   justify-content: space-around;
 }
 
+.seasonHeader {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.searchBar {
+  font-size: 25px;
+  text-align: center;
+  margin: 15px 0;
+}
+
+input[type="text"], textarea {
+
+  background-color : #d1d1d1;
+
+}
+
 button{
   color: yellow;
   background: blue;
@@ -58,4 +78,22 @@ button{
 button:hover{
   background: yellow;
   color: blue;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+b{
+  font-weight: bold;
+}
+
+p{
+  line-height: 125%;
 }

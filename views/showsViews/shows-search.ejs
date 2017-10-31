@@ -1,7 +1,8 @@
 <% include ../partials/boilerplate.ejs %>
-
-<input type ='text' class = 'search' placeholder = 'Pick a Show!'>
-<button type ='submit' class = 'finder'>Search!</button>
+<div class = 'searchBar'>
+  <input type ='text' class = 'search' placeholder = 'Find a Show!'>
+  <button type ='submit' class = 'finder'>Search!</button>
+</div>
 
 <div id = 'showsListing'>
   <% if (data.results.length === 0) { %>
@@ -9,7 +10,6 @@
   <% } %>
   <% data.results.forEach(e => { %>
     <div class = 'showContainer'>
-      <!-- let showID = e.id;  -->
       <div class = 'showPicture'>
         <% if (e.poster_path !== null){ %>
           <img  class = 'miniPoster' src ='https://image.tmdb.org/t/p/w500<%= e.poster_path%>'>
@@ -17,7 +17,7 @@
       </div>
       <div class = 'showInfo'>
         <h1><%= e.name %></h1>
-        <h2>First Air Date: <%= e.first_air_date %></h2>
+        <h2><b>First Air Date:</b> <%= e.first_air_date %></h2>
         <p><b>Description:</b> <%= e.overview %></p>
           <!-- <input type ='hidden' class = 'code' value = '<%= e.id %>'>
           <button type ='submit' class = 'single'>Check it out!</button> -->
