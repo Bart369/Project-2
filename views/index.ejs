@@ -2,14 +2,16 @@
 
 Hello Earthlings
 
-<div class = 'searchBar'>
-  <input type ='text' class = 'search' placeholder = 'Find a Show!'>
-  <button type ='submit' class = 'finder'>Search!</button>
+<div>
+  <form method='POST' action='/auth/login'>
+    <input name='username' type='text' placeholder='username' required />
+    <input name='password' type='password' placeholder='password' required />
+    <input type='submit' value='Log in!' />
+  </form>
 </div>
-<form method = 'GET' action = '/shows/favorites'>
-  <button type="submit">See Favorites</button>
+<form method="GET" action="/auth/register">
+  <button type="Register">Register</button>
 </form>
 
 
-<script src='/src/main.js'></script>
 <% include ./partials/end.ejs %>
