@@ -3,6 +3,9 @@
   <input type ='text' class = 'search' placeholder = 'Find a Show!'>
   <button type ='submit' class = 'finder'>Search!</button>
 </div>
+<form method = 'GET' action = '/shows/favorites'>
+  <button type="submit">See Favorites</button>
+</form>
 
 <div id = 'showsListing'>
   <% if (data.results.length === 0) { %>
@@ -16,6 +19,14 @@
         <% } else { %>
           <img class = 'miniposter' src = 'http://res.cloudinary.com/dnockqung/image/upload/q_99/v1509421586/noimage_ibguir.jpg'>
           <% } %>
+        <form method="POST" action="/shows/add">
+          <input type = 'hidden' name = 'name' value = "<%= e.name %>"/>
+          <input type = 'hidden' name = 'description' value = "<%= e.overview %>"/>
+          <input type = 'hidden' name = 'date' value = '<%= e.first_air_date %>'/>
+          <input type = 'hidden' name = 'poster' value = 'https://image.tmdb.org/t/p/w500<%= e.poster_path%>'/>
+          <input type = 'hidden' name = 'showcodeid' value = '<%= e.id %>'/>
+          <button type="submit">Add to Favorites</button>
+        </form>
       </div>
       <div class = 'showInfo'>
         <h1><%= e.name %></h1>
