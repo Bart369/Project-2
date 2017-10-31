@@ -1,32 +1,53 @@
 .poster {
-  height: 300px;
-  width: 300px;
+  height: 500px;
+  width: 350px;
   background-size: cover;
 }
 
+.miniPoster {
+  height: 350px;
+  width: 250px;
+  background-size: cover;
+}
+
+.largeContainer{
+  border: solid;
+  display: flex;
+  max-width: 650px;
+  max-height: 500px;
+  overflow: scroll;
+
+}
 
 .showContainer{
   border: solid;
   display: flex;
-}
+  margin-bottom: 10px;
+  max-width: 500px;
+  max-height: 400px;
+  overflow: scroll;
+ }
 
-.showsListing{
+#showsListing{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
-  flex-direction: wrap;
 }
 
 .showInfo{
+
   max-width: 400px;
 
 }
 .showPicture{
+  display: flex;
 
 }
 
 .seasons{
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 button{

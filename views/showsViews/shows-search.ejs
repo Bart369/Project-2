@@ -10,14 +10,21 @@
   <% data.results.forEach(e => { %>
     <div class = 'showContainer'>
       <!-- let showID = e.id;  -->
-      <h1><%= e.name %></h1>
-      <% if (e.poster_path !== null){ %>
-        <img src ='https://image.tmdb.org/t/p/w300<%= e.poster_path%>'>
-      <% } %>
-      <h2>First Air Date: <%= e.first_air_date %></h2>
-      <p><b>Description:</b> <%= e.overview %></p>
-      <input type ='hidden' class = 'code' value = '<%= e.id %>'>
-      <button type ='submit' class = 'single'>Check it out!</button>
+      <div class = 'showPicture'>
+        <% if (e.poster_path !== null){ %>
+          <img  class = 'miniPoster' src ='https://image.tmdb.org/t/p/w500<%= e.poster_path%>'>
+        <% } %>
+      </div>
+      <div class = 'showInfo'>
+        <h1><%= e.name %></h1>
+        <h2>First Air Date: <%= e.first_air_date %></h2>
+        <p><b>Description:</b> <%= e.overview %></p>
+          <!-- <input type ='hidden' class = 'code' value = '<%= e.id %>'>
+          <button type ='submit' class = 'single'>Check it out!</button> -->
+          <form method = 'GET' action = '/shows/search/<%= e.id %>'>
+            <button type="submit">See More Info!</button>
+          </form>
+      </div>
     </div>
   <% }) %>
 </div>

@@ -7,9 +7,9 @@ const showsController = require('../controllers/shows-controller.js');
 
 
 // showsRoutes.get('/', showsController.index); THIS WILL LEAD TO FAVORITES maybe
-// showsRoutes.get('/:search', (req,res) => {
-//   res.render('showsViews/shows-search.ejs')
-// })
+showsRoutes.get('/', (req,res) => {
+  res.render('showsViews/shows-search.ejs')
+})
 showsRoutes.get(`/:search`, showsController.fetch);
 showsRoutes.get('/search/:code', showsController.findById);
 

@@ -1,9 +1,9 @@
 <% include ../partials/boilerplate.ejs %>
 
-<div class = 'showContainer'>
+<div class = 'largeContainer'>
   <% if (jsonData.poster_path != null) { %>
   <div class = 'showPicture'>
-    <img src = 'https://image.tmdb.org/t/p/w300<%= jsonData.poster_path %>'>
+    <img class = 'poster'  src = 'https://image.tmdb.org/t/p/w500<%= jsonData.poster_path %>'>
   </div>
   <% } %>
   <div class = 'showInfo'>
@@ -21,9 +21,11 @@
 <div class = 'seasons'>
   <% jsonData.seasons.forEach(e =>{ %>
   <div class = 'showContainer'>
-    <div class = 'showPicture'>
-      <img src = 'https://image.tmdb.org/t/p/w300<%= e.poster_path %>'>
-    </div>
+    <% if (e.poster_path != null) { %>
+      <div class = 'showPicture'>
+        <img  class = 'miniPoster' src = 'https://image.tmdb.org/t/p/w500<%= e.poster_path %>'>
+      </div>
+    <% } %>
     <div class = 'showInfo'>
       <h1>Season: <%= e.season_number %></h1>
       <p>Episode Count: <%= e.episode_count %></p>
