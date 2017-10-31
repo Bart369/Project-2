@@ -6,9 +6,9 @@
     <img class = 'poster'  src = 'https://image.tmdb.org/t/p/w500<%= jsonData.poster_path %>'>
   </div>
   <% } %>
-  <div class = 'showInfo'>
+  <div class = 'largeInfo'>
     <h1><%= jsonData.name %></h1>
-    <p><b>First Air Date:</b> <%= jsonData.first_air_date %> </p>
+    <h2><b>First Air Date:</b> <%= jsonData.first_air_date %> </h2>
     <p><b>Networks:</b> <% jsonData.networks.forEach(e => { %> <%=e.name %> <% }) %></p>
     <p><b>Status:</b> <%= jsonData.status %></p>
     <p><b>Number of episodes:</b> <%= jsonData.number_of_episodes %></p>
@@ -25,6 +25,8 @@
       <div class = 'showPicture'>
         <img  class = 'miniPoster' src = 'https://image.tmdb.org/t/p/w500<%= e.poster_path %>'>
       </div>
+    <% } else { %>
+        <img class = 'miniposter' src = 'http://res.cloudinary.com/dnockqung/image/upload/q_99/v1509421586/noimage_ibguir.jpg'>
     <% } %>
     <div class = 'showInfo'>
       <h2>Season: <%= e.season_number %></h2>

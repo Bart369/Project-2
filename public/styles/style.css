@@ -19,27 +19,33 @@
   overflow: scroll;
   margin-top: 15px;
   margin-left: 15%;
-  /*line-height: 115%;*/
+}
 
+.largeInfo{
+  margin-left: 15px;
+  max-width: 400px;
+  overflow: scroll;
 }
 
 .showContainer{
   display: flex;
   margin-bottom: 10px;
-  max-width: 500px;
+  max-width: 450px;
   max-height: 400px;
-  overflow: scroll;
+
  }
 
 #showsListing{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around
+  justify-content: space-around;
 }
 
 .showInfo{
+  margin-left: 10px;
+  max-width: 150px;
+  overflow: scroll;
 
-  max-width: 400px;
 
 }
 .showPicture{
