@@ -6,9 +6,9 @@ const showsController = {};
 
 showsController.favorites = (req,res) => {
     Shows.findAll()
-    .then((shows) =>{
-    console.log(shows);
-    res.render('showsViews/shows-favorites.ejs', {shows});
+    .then((favorites) =>{
+    console.log(favorites);
+    res.render('showsViews/shows-favorites.ejs', {favorites});
   }).catch(err => {
     console.log(err);
     res.status(500).json({
@@ -19,13 +19,15 @@ showsController.favorites = (req,res) => {
 }
 
 showsController.create = (req,res) => {
+  //console.log(req.body);
   Shows.create({
     name: req.body.name,
     description: req.body.description,
-    first_air_date: req.body.date,
-    posterPath: req.body.poster,
-    showcodeid: req.body.showcodeid
-  }).then(show => {
+    first_air_date: req.body.first_air_date,
+    posterpath: req.body.posterpath,
+    showcodeid: req.body.showcodeid,
+  },req.user.id).then(show => {
+    console.log('show:', show);
     res.redirect('/shows/favorites')
   }).catch(err => {
     console.log(err).json({error:err})

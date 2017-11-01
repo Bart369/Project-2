@@ -4,11 +4,18 @@ const User = require('../models/user.js');
 const usersController = {};
 
 usersController.index = (req, res) => {
-  res.json({
-    message: 'Put a user profile page on this route',
-    data: {
-      user: req.user,
-    },
+  User.findUserFavorites(req.user.id)
+    .then(favorites => {
+      res.json({
+        message: 'Put a user profile page on this route',
+        data: {
+          user: req.user,
+          favorites: favorites
+        },
+    });
+  }).catch(err => {
+      console.log(err);
+      res.status(500).json({error:err})
   });
 };
 

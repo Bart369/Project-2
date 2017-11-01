@@ -8,7 +8,6 @@
 </form>
 <a href ='/auth/logout'><button>Logout!</button></a>
 
-
 <div id = 'showsListing'>
   <% if (data.results.length === 0) { %>
     <h1>No matches found</h1>
@@ -24,8 +23,8 @@
         <form method="POST" action="/shows/add">
           <input type = 'hidden' name = 'name' value = "<%= e.name %>"/>
           <input type = 'hidden' name = 'description' value = "<%= e.overview %>"/>
-          <input type = 'hidden' name = 'date' value = '<%= e.first_air_date %>'/>
-          <input type = 'hidden' name = 'poster' value = 'https://image.tmdb.org/t/p/w500<%= e.poster_path%>'/>
+          <input type = 'hidden' name = 'first_air_date' value = '<%= e.first_air_date %>'/>
+          <input type = 'hidden' name = 'posterpath' value = 'https://image.tmdb.org/t/p/w500<%= e.poster_path%>'/>
           <input type = 'hidden' name = 'showcodeid' value = '<%= e.id %>'/>
           <button type="submit">Add to Favorites</button>
         </form>

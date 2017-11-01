@@ -3,29 +3,33 @@ const db = require('../db/config.js');
 const Shows = {};
 
 Shows.findAll = () => {
-  return db.query('SELECT * FROM shows')
+  return db.query('SELECT * FROM favorites')
 };
 
-Shows.create = show => db.one(`
-  INSERT INTO shows (
+Shows.create = (favorites, userid) => {
+  db.one(`
+  INSERT INTO favorites (
   name,
   description,
   first_air_date,
-  posterPath,
-  showcodeid
+  posterpath,
+  showcodeid,
+  userid
   ) VALUES (
-  $/name/,
-  $/description/,
-  $/first_air_date/,
-  $/posterPath/,
-  $/showcodeid/
+  $1,
+  $2,
+  $3,
+  $4,
+  $5,
+  $6
   )
   Returning *`,
-  show)
+  [favorites.name, favorites.description, favorites.first_air_date, favorites.posterpath, favorites.showcodeid, userid])
+}
 
 Shows.delete = id => {
   return db.none(
-    `DELETE FROM shows WHERE id = $1`, [id])
+    `DELETE FROM favorites WHERE id = $1`, [id])
 }
 
 module.exports = Shows;

@@ -18,4 +18,11 @@ User.create = user => {
   `, [user.username, user.email, user.password_digest]);
 };
 
+User.findUserFavorites = id => {
+  return db.manyOrNone(`
+    SELECT * FROM favorites
+    WHERE username = $1
+  `, [id]);
+};
+
 module.exports = User;
