@@ -11,6 +11,6 @@ information.
 
 Things I Need to work on:
 
-- I'm getting an error now when adding a favorites and redirecting to the next page. The show gets addded to the database but the user doesn't get redirected.
+- I'm getting an error (TypeError: Cannot read property 'then' of undefined) now when adding a favorites and redirecting to the next page. The show gets addded to the database but the user doesn't get redirected.
 
 - Separating favorites list between users.
