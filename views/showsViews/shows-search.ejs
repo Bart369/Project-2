@@ -18,7 +18,7 @@
         <% if (e.poster_path !== null){ %>
           <img  class = 'miniPoster' src ='https://image.tmdb.org/t/p/w500<%= e.poster_path%>'>
         <% } else { %>
-          <img class = 'miniposter' src = 'http://res.cloudinary.com/dnockqung/image/upload/q_99/v1509421586/noimage_ibguir.jpg'>
+          <img class = 'miniPoster' src = 'http://res.cloudinary.com/dnockqung/image/upload/q_99/v1509421586/noimage_ibguir.jpg'>
           <% } %>
         <form method="POST" action="/shows/add">
           <input type = 'hidden' name = 'name' value = "<%= e.name %>"/>

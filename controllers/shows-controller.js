@@ -19,15 +19,14 @@ showsController.favorites = (req,res) => {
 }
 
 showsController.create = (req,res) => {
-  //console.log(req.body);
+  console.log('req.body:', req.body);
   Shows.create({
     name: req.body.name,
     description: req.body.description,
     first_air_date: req.body.first_air_date,
     posterpath: req.body.posterpath,
-    showcodeid: req.body.showcodeid,
+    showcodeid: req.body.showcodeid
   },req.user.id).then(show => {
-    console.log('show:', show);
     res.redirect('/shows/favorites')
   }).catch(err => {
     console.log(err).json({error:err})
