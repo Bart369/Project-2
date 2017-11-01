@@ -9,6 +9,10 @@ User.findByUserName = userName => {
   `, [userName]);
 };
 
+User.accessAllUsers = () => {
+  return db.oneOrNone(`SELECT * FROM users`);
+};
+
 User.create = user => {
   return db.one(`
     INSERT INTO users

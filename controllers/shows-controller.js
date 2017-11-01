@@ -1,11 +1,12 @@
 require('isomorphic-fetch');
 
 const Shows = require('../models/Shows.js');
+const User = require('../models/user.js');
 
 const showsController = {};
 
 showsController.favorites = (req,res) => {
-    Shows.findAll()
+    Shows.findAll(req.user.id)
     .then((favorites) =>{
     console.log(favorites);
     res.render('showsViews/shows-favorites.ejs', {favorites});
@@ -60,14 +61,13 @@ showsController.fetch = (req,res) => {
       console.log(err);
     })
 }
-showsController.destroy = (req,res) => {
+showsController.destroy = (req,res,next) => {
   Shows.delete(req.params.id)
     .then(() => {
       res.redirect('/shows/favorites');
     }).catch(err => {
       console.log(err).json({error:err})
     })
-
 }
 
 

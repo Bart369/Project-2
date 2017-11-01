@@ -2,9 +2,10 @@ const db = require('../db/config.js');
 
 const Shows = {};
 
-Shows.findAll = () => {
-  return db.query('SELECT * FROM favorites') //join to get user id?
+Shows.findAll = (id) => {
+  return db.query(`SELECT * FROM favorites WHERE userid = $1`, [id])
 };
+
 
 Shows.create = (favorites, userid) => {
   return db.one(`
