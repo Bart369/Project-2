@@ -71,8 +71,5 @@ showsController.destroy = (req,res) => {
 }
 
 
-
-
-
 module.exports = showsController;
 

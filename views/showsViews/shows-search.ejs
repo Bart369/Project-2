@@ -35,10 +35,10 @@
         <p><b>Description:</b> <%= e.overview %></p>
           <!-- <input type ='hidden' class = 'code' value = '<%= e.id %>'>
           <button type ='submit' class = 'single'>Check it out!</button> -->
-          <form method = 'GET' action = '/shows/search/<%= e.id %>'>
-            <button type="submit">See More Info!</button>
-          </form>
       </div>
+      <form method = 'GET' action = '/shows/search/<%= e.id %>'>
+            <button type="submit">See More Info!</button>
+      </form>
     </div>
   <% }) %>
 </div>

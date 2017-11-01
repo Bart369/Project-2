@@ -4,9 +4,6 @@ const showsRoutes = express.Router();
 const showsController = require('../controllers/shows-controller.js');
 const authHelpers = require('../services/auth/auth-helpers');
 
-// showsRoutes.post('/', showsController.create);
-
-
 
 showsRoutes.get('/', (req,res) => {
   res.render('showsViews/shows-searchbar.ejs')

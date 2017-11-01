@@ -3,7 +3,7 @@ const db = require('../db/config.js');
 const Shows = {};
 
 Shows.findAll = () => {
-  return db.query('SELECT * FROM favorites')
+  return db.query('SELECT * FROM favorites') //join to get user id?
 };
 
 Shows.create = (favorites, userid) => {

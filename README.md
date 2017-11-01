@@ -4,12 +4,13 @@ User Story
 
 - User logs in.
 
-- They see a list of their favorite shows and has the option to search for other 
-shows via the search bar.
+- They can then search for shows or look at their list of favorites.
 
 - When you click on a show you are taken to another page that will display extra
-information such as a list of episodes sorted by season, most recent episode at the top
-and other stuff. There will be a button somewhere on the screen to add it to 
-your favorites list.
+information. 
 
-- Maybe you can leave a comment or share with a friend if i get that far.
+Things I Need to work on:
+
+- I'm getting an error now when adding a favorites and redirecting to the next page. The show gets addded to the database but the user doesn't get redirected.
+
+- Separating favorites list between users.
