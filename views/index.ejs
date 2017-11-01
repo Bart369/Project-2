@@ -1,16 +1,22 @@
 <% include ./partials/boilerplate.ejs %>
 
-<div>
-  <form class = 'login' method='POST' action='/auth/login'>
-    <input name='username' type='text' placeholder='username' required />
-    <input name='password' type='password' placeholder='password' required />
-    <button type='submit'>Log In!</button>
-  </form>
-</div>
-<form method="GET" action="/auth/register">
-  <button type="Register">Register</button>
-</form>
+<div class = 'logo'>Showsbox</div>
 
+<div class = 'loginPageForms'>
+  <form class = 'login' method='POST' action='/auth/login'>
+    <div class = 'loginForms'>
+      <input name='username' type='text' placeholder='username' required />
+      <input name='password' type='password' placeholder='password' required />
+    </div>
+    <div class = 'loginregbutts'>
+    <button type='submit'>Log In!</button>
+    </form>
+  <form method="GET" action="/auth/register">
+    <button type="Register">Register</button>
+  </div>
+  </form>
+
+</div>
 
 <script src='/src/main.js'></script>
 <% include ./partials/end.ejs %>

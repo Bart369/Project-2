@@ -1,6 +1,5 @@
 body{
   background-color: #336699;
-  color: white;
 }
 
 .poster {
@@ -33,6 +32,26 @@ body{
   overflow: scroll;
 }
 
+.loginForms{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.loginregbutts{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+.loginPageForms{
+  margin-top: 10%;
+}
+
+/****************************       SHOW CONTAINERS **********************/
+
 .showContainer{
   display: flex;
   margin-bottom: 25px;
@@ -52,14 +71,15 @@ body{
   max-width: 150px;
   max-height: 350px;
   overflow: scroll;
-
-
+  color: white;
 }
 .showPicture{
   display: flex;
   flex-direction: column;
 
 }
+
+/***************************              ***************/
 
 .buttonContainer{
   display: flex;
@@ -83,34 +103,60 @@ body{
   margin: 15px 0;
 }
 
+.logo{
+  font-family: 'Contrail One', cursive;
+  font-size: 200px;
+  text-align: center;
+  margin-top: 10%;
+  text-shadow:  0 0 10px white,
+                  0 0 20px white,
+                  0 0 30px white,
+                  0 0 40px white;
+
+
+}
+
 input[type="text"], textarea {
+background-color : white;
+}
 
-  background-color : #d1d1d1;
+input[type="password"], textarea {
+background-color : white;
+}
 
+input{
+  font-size: 30px;
+  margin: 7px;
+  border-radius: 4px;
 }
 
 button{
   color: black;
   background: #e6e6e6;
-  margin-left: 5px;
+  margin: 8px;
   padding: 3px;
   border-radius: 4px;
   box-shadow: 5px 5px 5px #262626;
+  font-size: 25px;
+  width: 135px;
 }
 
 button:hover{
   background: #808080;
   color: white;
+
 }
 
 h1 {
   font-size: 30px;
   font-weight: bold;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
 h2 {
   font-size: 20px;
   font-weight: bold;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
 b{
@@ -119,4 +165,5 @@ b{
 
 p{
   line-height: 125%;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
 }
