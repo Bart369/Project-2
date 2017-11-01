@@ -7,7 +7,7 @@ Shows.findAll = () => {
 };
 
 Shows.create = (favorites, userid) => {
-  db.one(`
+  return db.one(`
   INSERT INTO favorites (
   name,
   description,
