@@ -24,7 +24,7 @@ Shows.create = (favorites, userid) => {
   $6
   )
   Returning *`,
-  [favorites, userid])
+  [favorites.name, favorites.description, favorites.first_air_date, favorites.posterpath, favorites.showcodeid, userid])
 }
 
 Shows.delete = id => {
