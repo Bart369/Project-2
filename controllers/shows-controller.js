@@ -26,7 +26,7 @@ showsController.create = (req,res) => {
     first_air_date: req.body.first_air_date,
     posterpath: req.body.posterpath,
     showcodeid: req.body.showcodeid
-  },req.user.id).then(show => {
+  },req.user.id).then(shows => {
     res.redirect('/shows/favorites')
   }).catch(err => {
     console.log(err).json({error:err})
