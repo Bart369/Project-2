@@ -7,13 +7,17 @@ nav{
   background-color: white;
   display: flex;
   justify-content: flex-end;
+  font-size: 20px;
+}
+
+.move {
+  display: flex;
 
 }
 
 .searchBar {
-  font-size: 25px;
+  display: flex;
 
-  align-self: center;
 }
 
 .logo{
@@ -22,9 +26,9 @@ nav{
   text-align: center;
   margin-top: 10%;
   text-shadow:  0 0 10px white,
-                  0 0 20px white,
-                  0 0 30px white,
-                  0 0 40px white;
+                0 0 20px white,
+                0 0 30px white,
+                0 0 40px white;
 
 
 }
@@ -57,12 +61,30 @@ nav{
   box-shadow: 5px 5px 5px #262626;
 }
 
-/**************************************************************************************/
+/********************************************Login and Register ******************************************/
 .loginForms{
   display: flex;
   flex-direction: column;
   align-items: center;
+}
 
+.register {
+margin-top: 20%;
+}
+
+.regbutt{
+  background: #e6e6e6;
+  margin: 8px;
+  padding: 3px;
+  border-radius: 4px;
+  box-shadow: 5px 5px 5px #262626;
+  font-size: 25px;
+  width: 135px;
+}
+
+.regbutt:hover{
+  background: #808080;
+  color: white;
 }
 
 .loginregbutts{
@@ -112,6 +134,15 @@ nav{
   flex-direction: column;
 }
 
+.heartless{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: red;
+  margin-top: 10%;
+  font-size: 50px;
+}
+
 /************************************** Seasons  ************************************************/
 
 
@@ -129,6 +160,7 @@ nav{
   background-color: white;
   color: #336699;
   width: 100%;
+  font-size: 35px;
 }
 
 
@@ -141,10 +173,26 @@ input[type="password"], textarea {
 background-color : white;
 }
 
+input[type="email"], textarea {
+background-color : white;
+}
+
+
 input{
   font-size: 30px;
   margin: 7px;
   border-radius: 4px;
+}
+
+.loginbutt{
+  color: black;
+  background: #e6e6e6;
+  margin: 8px;
+  padding: 3px;
+  border-radius: 4px;
+  box-shadow: 5px 5px 5px #262626;
+  font-size: 25px;
+  width: 135px;
 }
 
 /******************************************* Buttons ***********************************/
@@ -164,22 +212,47 @@ button{
   box-shadow: 5px 5px 5px #262626;
 }
 
-
-.loginbutt{
-  color: black;
-  background: #e6e6e6;
-  margin: 8px;
-  padding: 3px;
-  border-radius: 4px;
-  box-shadow: 5px 5px 5px #262626;
-  font-size: 25px;
-  width: 135px;
-}
-
-
 button:hover{
   background: #808080;
   color: white;
+}
+
+nav{
+  margin: 0 0 15px 0;
+  background-color: white;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 3%;
+  font-size: 35px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+nav button{
+box-shadow: none;
+margin: 0;
+background-color: white;
+padding: 5px;
+border-radius: 0;
+}
+
+nav button:hover{
+  background: #336699;
+  color: white;
+  border: black 5px;
+}
+
+.logo2{
+  float: left;
+}
+
+.move {
+  display: flex;
+
+}
+
+.searchBar {
+  display: flex;
+
 }
 
 

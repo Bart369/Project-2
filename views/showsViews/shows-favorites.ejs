@@ -1,11 +1,21 @@
 <% include ../partials/boilerplate.ejs %>
 
-<div class = 'searchBar'>
-  <input type ='text' class = 'search' placeholder = 'Find a Show!'>
-  <button type ='submit' class = 'finder'>Search!</button>
-</div>
-<a href ='/auth/logout'><button>Logout!</button></a>
+<nav>
+  <div class = 'searchBar'>
+    <input type ='text' class = 'search' placeholder = 'Find a Show!'>
+    <button type ='submit' class = 'finder'>Search</button>
+  </div>
+  <div class = 'move'>
+    <form method = 'GET' action = '/shows/favorites'>
+      <button type="submit">Favorites</button>
+    </form>
+    <a href ='/auth/logout'><button>Logout</button></a>
+  </div>
+</nav>
 <div id = 'showsListing'>
+  <% if (favorites.length === 0) { %>
+    <h1 class = 'heartless'>You have no favorites heartless creature</h1>
+  <% } %>
   <% favorites.forEach(e => { %>
     <div class = 'showContainer'>
       <div class = 'showPicture'>
