@@ -2,36 +2,62 @@ body{
   background-color: #336699;
 }
 
-.poster {
-  height: 500px;
-  width: 350px;
-  background-size: cover;
+nav{
+  margin: 0;
+  background-color: white;
+  display: flex;
+  justify-content: flex-end;
+
 }
 
-.miniPoster {
-  height: 350px;
-  width: 250px;
-  box-shadow: 5px 5px 5px #262626;
-  border-radius: 2px;
-  background-size: cover;
+.searchBar {
+  font-size: 25px;
+
+  align-self: center;
 }
 
+.logo{
+  font-family: 'Contrail One', cursive;
+  font-size: 200px;
+  text-align: center;
+  margin-top: 10%;
+  text-shadow:  0 0 10px white,
+                  0 0 20px white,
+                  0 0 30px white,
+                  0 0 40px white;
+
+
+}
+
+/**************************************Large Poster. ************************************************/
 
 .largeContainer{
   display: flex;
-  max-width: 750px;
-  max-height: 500px;
+  max-width: 800px;
+  height: 505px;
   overflow: scroll;
-  margin-top: 15px;
+  margin-top: 20px;
   margin-left: 15%;
+  margin-bottom: 10px;
 }
 
 .largeInfo{
   margin-left: 15px;
-  max-width: 400px;
+  width: 500px;
+  height: 500;
   overflow: scroll;
+  font-size: 25px;
+  color: white;
 }
 
+.poster {
+  height: 500px;
+  width: 350px;
+  background-size: cover;
+  box-shadow: 5px 5px 5px #262626;
+}
+
+/**************************************************************************************/
 .loginForms{
   display: flex;
   flex-direction: column;
@@ -57,8 +83,15 @@ body{
   margin-bottom: 25px;
   max-width: 450px;
   max-height: 400px;
-
  }
+
+ .miniPoster {
+  height: 350px;
+  width: 250px;
+  box-shadow: 5px 5px 5px #262626;
+  border-radius: 2px;
+  background-size: cover;
+}
 
 #showsListing{
   display: flex;
@@ -68,23 +101,20 @@ body{
 
 .showInfo{
   margin-left: 10px;
-  max-width: 150px;
+  max-width: 200px;
   max-height: 350px;
   overflow: scroll;
   color: white;
+  font-size: 20px;
 }
 .showPicture{
   display: flex;
   flex-direction: column;
-
 }
 
-/***************************              ***************/
+/************************************** Seasons  ************************************************/
 
-.buttonContainer{
-  display: flex;
-  margin-top: 10px;
-}
+
 
 .seasons{
   display: flex;
@@ -94,27 +124,14 @@ body{
 
 .seasonHeader {
   text-align: center;
-  margin-bottom: 20px;
+  margin: 20px 0;
+  border: solid;
+  background-color: white;
+  color: #336699;
+  width: 100%;
 }
 
-.searchBar {
-  font-size: 25px;
-  text-align: center;
-  margin: 15px 0;
-}
 
-.logo{
-  font-family: 'Contrail One', cursive;
-  font-size: 200px;
-  text-align: center;
-  margin-top: 10%;
-  text-shadow:  0 0 10px white,
-                  0 0 20px white,
-                  0 0 30px white,
-                  0 0 40px white;
-
-
-}
 
 input[type="text"], textarea {
 background-color : white;
@@ -130,7 +147,25 @@ input{
   border-radius: 4px;
 }
 
+/******************************************* Buttons ***********************************/
+
+.buttonContainer{
+  display: flex;
+  margin-top: 5px;
+}
+
 button{
+  color: black;
+  background: #e6e6e6;
+  margin-top: 6px;
+  margin-left: 10px;
+  padding: 3px;
+  border-radius: 4px;
+  box-shadow: 5px 5px 5px #262626;
+}
+
+
+.loginbutt{
   color: black;
   background: #e6e6e6;
   margin: 8px;
@@ -141,14 +176,17 @@ button{
   width: 135px;
 }
 
+
 button:hover{
   background: #808080;
   color: white;
-
 }
 
+
+/****************************************************************************/
+
 h1 {
-  font-size: 30px;
+  font-size: 35px;
   font-weight: bold;
   font-family: 'Yanone Kaffeesatz', sans-serif;
 }

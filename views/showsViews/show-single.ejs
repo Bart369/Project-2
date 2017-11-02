@@ -1,5 +1,5 @@
 <% include ../partials/boilerplate.ejs %>
-
+<nav>
 <div class = 'searchBar'>
   <input type ='text' class = 'search' placeholder = 'Find a Show!'>
   <button type ='submit' class = 'finder'>Search!</button>
@@ -8,6 +8,7 @@
   <button type="submit">See Favorites</button>
 </form>
 <a href ='/auth/logout'><button>Logout!</button></a>
+</nav>
 <div class = 'largeContainer'>
   <% if (jsonData.poster_path != null) { %>
   <div class = 'showPicture'>
@@ -34,7 +35,7 @@
         <img  class = 'miniPoster' src = 'https://image.tmdb.org/t/p/w500<%= e.poster_path %>'>
       </div>
     <% } else { %>
-        <img class = 'miniposter' src = 'http://res.cloudinary.com/dnockqung/image/upload/q_99/v1509421586/noimage_ibguir.jpg'>
+        <img class = 'miniPoster' src = 'http://res.cloudinary.com/dnockqung/image/upload/q_99/v1509421586/noimage_ibguir.jpg'>
     <% } %>
     <div class = 'showInfo'>
       <h2>Season: <%= e.season_number %></h2>

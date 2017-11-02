@@ -15,15 +15,15 @@ authRouter.get('/register', authHelpers.loginRedirect, (req, res) => {
 authRouter.post('/register', usersController.create);
 
 authRouter.post('/login', passport.authenticate('local', {
-    successRedirect: '/shows',
-    failureRedirect: '/auth/login',
+    successRedirect: '/shows/favorites',
+    failureRedirect: '/',
     failureFlash: true,
   })
 );
 
 authRouter.get('/logout', (req, res) => {
   req.logout();
-  res.redirect('/auth/login');
+  res.redirect('/');
 });
 
 module.exports = authRouter;

@@ -5,26 +5,27 @@
   <button type ='submit' class = 'finder'>Search!</button>
 </div>
 <a href ='/auth/logout'><button>Logout!</button></a>
+<div id = 'showsListing'>
   <% favorites.forEach(e => { %>
     <div class = 'showContainer'>
       <div class = 'showPicture'>
           <img  class = 'miniPoster' src ='<%= e.posterpath %>'>
-      </div>
-      <div class = 'showInfo'>
-        <h1><%= e.name %></h1>
-        <h2><b>First Air Date:</b> <%= e.first_air_date %></h2>
-        <p><b>Description:</b> <%= e.overview %></p>
-          <!-- <input type ='hidden' class = 'code' value = '<%= e.showcodeid %>'>
-          <button type ='submit' class = 'single'>Check it out!</button> -->
+        <div class = 'buttonContainer'>
           <form method = 'GET' action = '/shows/search/<%= e.showcodeid %>'>
             <button type="submit">See More Info!</button>
           </form>
           <form method="POST" action="/shows/search/<%= e.id %>?_method=DELETE">
             <button type="submit">Delete this trash</button>
           </form>
+        </div>
+      </div>
+      <div class = 'showInfo'>
+        <h1><%= e.name %></h1>
+        <h2><b>First Air Date:</b> <%= e.first_air_date %></h2>
+        <p><b>Description:</b> <%= e.description %></p>
       </div>
     </div>
 <% }) %>
-
+</div>
 <script src='/src/main.js'></script>
 <% include ../partials/end.ejs %>
