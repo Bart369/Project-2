@@ -238,7 +238,7 @@ border-radius: 0;
 nav button:hover{
   background: #336699;
   color: white;
-  border: black 5px;
+  border-bottom: black;
 }
 
 .logo2{
