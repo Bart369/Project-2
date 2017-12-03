@@ -1,14 +1,15 @@
 <% include ../partials/boilerplate.ejs %>
 <nav>
-  <div class = 'searchBar'>
-    <input type ='text' class = 'search' placeholder = 'Find a Show!'>
-    <button type ='submit' class = 'finder'>Search</button>
-  </div>
-  <div class = 'move'>
-    <form method = 'GET' action = '/shows/favorites'>
+  <div class='smallLogo'>Showbot</div>
+  <div class='searchBar'>
+    <input type='text' class='search' placeholder='Find a Show!'>
+    <button type='submit' class='finder'>Search</button>
+    <form method='GET' action='/shows/favorites'>
       <button type="submit">Favorites</button>
     </form>
-    <a href ='/auth/logout'><button>Logout</button></a>
+    <a href='/auth/logout'>
+      <button>Logout</button>
+    </a>
   </div>
 </nav>
 <div id = 'showsListing'>

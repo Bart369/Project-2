@@ -2,7 +2,7 @@ body{
   background-color: #336699;
 }
 
-nav{
+/* nav{
   margin: 0;
   background-color: white;
   display: flex;
@@ -18,7 +18,7 @@ nav{
 .searchBar {
   display: flex;
 
-}
+} */
 
 .logo{
   font-family: 'Contrail One', cursive;
@@ -28,7 +28,7 @@ nav{
   text-shadow:  0 0 10px white,
                 0 0 20px white,
                 0 0 30px white,
-                0 0 40px white;
+                0 0 40px rgb(241, 245, 2);
 
 
 }
@@ -221,8 +221,9 @@ nav{
   margin: 0 0 15px 0;
   background-color: white;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding-right: 3%;
+  padding-left: 3%;
   font-size: 35px;
   font-family: 'Yanone Kaffeesatz', sans-serif;
 }
@@ -231,7 +232,7 @@ nav button{
 box-shadow: none;
 margin: 0;
 background-color: white;
-padding: 5px;
+padding: 7px;
 border-radius: 0;
 }
 
@@ -252,7 +253,20 @@ nav button:hover{
 
 .searchBar {
   display: flex;
+  
+}
 
+.search{
+  border: 2px solid #e6e6e6
+}
+
+
+.smallLogo {
+  font-family: 'Contrail One', cursive;
+  font-size: 35px;
+  display: flex;
+  align-self: center;
+  /* text-shadow: 10px 10px  blue, */
 }
 
 
